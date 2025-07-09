@@ -4,7 +4,13 @@ const app = express();
 const aiRoutes = require("./routes/ai.routes");
 const cors = require("cors");
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173" // <-- Replace with your actual deployed frontend domain
+];
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get("/",(req, res) => {
