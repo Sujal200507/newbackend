@@ -5,8 +5,10 @@ const aiRoutes = require("./routes/ai.routes");
 const cors = require("cors");
 
 const allowedOrigins = [
-  "http://localhost:5173" // <-- Replace with your actual deployed frontend domain
+  "http://localhost:5173",
+  "https://newfrontend-sigma.vercel.app"
 ];
+
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
