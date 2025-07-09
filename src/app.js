@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.get("/", (req, res) => {
+app.get("/",'0.0.0.0' ,(req, res) => {
   res.status(200).json({status: "ok"});
 });
 app.get("/healthz", (req, res) => {
